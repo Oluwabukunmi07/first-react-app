@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useState } from "react";
 
 export default function App() {
@@ -10,12 +11,16 @@ export default function App() {
     setCount((c) => c + 1);
   }
 
+  useEffect(function () {
+    getAdvice();
+  }, []);
+
   return (
     <div>
       <h1>{advice}</h1>
       <button onClick={getAdvice}>Get advice</button>
       <p>
-        You have read <strong>{count}</strong> pices of advice
+        You have read <strong>{count}</strong> peices of advice
       </p>
     </div>
   );
