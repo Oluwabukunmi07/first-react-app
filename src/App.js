@@ -19,9 +19,18 @@ export default function App() {
     <div>
       <h1>{advice}</h1>
       <button onClick={getAdvice}>Get advice</button>
+      <Message count={count} />
       <p>
         You have read <strong>{count}</strong> peices of advice
       </p>
     </div>
+  );
+}
+
+function Message(props) {
+  return (
+    <p>
+      You have read <strong>{props.count}</strong> peices of advice
+    </p>
   );
 }
